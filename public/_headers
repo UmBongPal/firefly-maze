@@ -1,0 +1,17 @@
+# Cloudflare Pages 응답 헤더 (Free 플랜 포함 기능)
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# 파일명에 해시가 없으므로 짧게 캐시 + 재검증 (배포 즉시 반영)
+/*.js
+  Cache-Control: public, max-age=300, must-revalidate
+/*.css
+  Cache-Control: public, max-age=300, must-revalidate
+/favicon.svg
+  Cache-Control: public, max-age=86400

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>반딧불 미로</title>
+  <meta name="description" content="반딧불이 루미가 되어 밤 정원의 꽃가루를 모으고 도깨비불을 피하는 미로 추격 웹게임.">
+  <meta name="theme-color" content="#0a1219">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="반딧불 미로">
+  <meta property="og:description" content="밤 정원 미로 추격 웹게임 — 브라우저에서 바로 플레이">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&family=Space+Mono:wght@700&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/game.js" defer></script>
+</head>
+<body>
+<div class="app">
+  <header class="hud">
+    <h1>반딧불 미로</h1>
+    <div class="stats">
+      <div class="stat"><span class="k">점수</span><span class="v" id="score">0</span></div>
+      <div class="stat"><span class="k">최고</span><span class="v" id="best">0</span></div>
+      <div class="stat"><span class="k">밤</span><span class="v" id="level">1</span></div>
+      <div class="stat"><span class="k">빛</span><span class="lives" id="lives"></span></div>
+    </div>
+    <div class="tools">
+      <button id="muteBtn" type="button" aria-pressed="false">소리 켬</button>
+      <button id="pauseBtn" type="button">멈춤</button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <div class="board" id="board">
+      <canvas id="cv" role="img" aria-label="게임 화면"></canvas>
+      <div class="overlay" id="overlay"></div>
+    </div>
+  </main>
+
+  <div class="pad" id="pad" aria-label="방향 버튼">
+    <button type="button" data-d="up" aria-label="위">▲</button>
+    <button type="button" data-d="left" aria-label="왼쪽">◀</button>
+    <button type="button" data-d="down" aria-label="아래">▼</button>
+    <button type="button" data-d="right" aria-label="오른쪽">▶</button>
+  </div>
+  <p class="help">방향키 또는 WASD로 이동 · P로 멈춤 · 좌우 끝 통로는 반대편으로 이어져요</p>
+  <noscript><p class="help">이 게임은 JavaScript가 필요해요.</p></noscript>
+</div>
+</body>
+</html>
