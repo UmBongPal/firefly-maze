@@ -61,3 +61,4 @@ canvas{display:block;touch-action:none}
 .pad [data-d="right"]{grid-column:3;grid-row:2}
 @media (pointer:coarse){.pad{display:grid}.help{display:none}}
 @media (max-width:420px){h1{font-size:1.3rem}.stats{gap:12px}.tools button{padding:6px 9px}}
+.primary{display:inline-block;text-decoration:none;border:1px solid var(--glow);border-radius:10px}

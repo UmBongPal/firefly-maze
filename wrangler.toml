@@ -1,4 +1,9 @@
-# Cloudflare Pages 설정 — 빌드 단계 없음, public/ 폴더를 그대로 배포
+# Cloudflare Workers 정적 자산 배포 — Worker 스크립트 없음, public/ 폴더를 그대로 서빙
+# (스크립트가 없으므로 Free 플랜 Worker 요청 한도(일 10만)에 집계되지 않음)
+# name은 Cloudflare 대시보드의 Worker 프로젝트 이름과 같아야 함
 name = "firefly-maze"
-pages_build_output_dir = "public"
 compatibility_date = "2025-11-01"
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
